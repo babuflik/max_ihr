@@ -1,0 +1,247 @@
+/* Hela HTML-filen */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Keyframes for the fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly down */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move to the original position */
+    }
+}
+
+/* Apply to section text */
+section {
+    opacity: 0; /* Hidden initially */
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Grundläggande stilar */
+body {
+    font-family: sans-serif; /* Välj ett lättläst typsnitt */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Förbättrar läsbarheten */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Ljusgrå bakgrund */
+}
+
+h1, h2, h3 {
+    margin: 0; /* Tar bort standardmarginaler */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px; /* Lägger till utrymme mellan sektioner */
+}
+
+/* Introduktionssektion */
+.hero-image {
+    text-align: center; /* Centrerar bilden */
+    margin-bottom: 20px;
+}
+
+.hero-image img {
+    max-width: 100%; /* Gör bilden responsiv */
+    height: auto;
+}
+
+.intro-text {
+    text-align: center;
+}
+
+/* Parallax background */
+.hero-image {
+    background-image: url('huvudfoto.jpg'); /* Replace with your actual image */
+    background-attachment: fixed; /* Creates the parallax effect */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image h1, .hero-image h3 {
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Glow effect on text */
+}
+
+/* Galleri */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery-section {
+    width: 28%;
+    margin-bottom: 20px;
+}
+
+.gallery-item {
+    margin-bottom: 10px;
+    opacity: 0; /* Gör objekten osynliga initialt */
+    transition: opacity 0.5s ease; /* Definierar övergången för opacitet */
+}
+
+.gallery-item.show {
+    opacity: 1; /* Gör objekten synliga när de ska visas */
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item img:hover, 
+.gallery-item video:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
+}
+
+/* Hover effect on images */
+.gallery-item img, 
+.gallery-item video {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item img:hover, 
+.gallery-item video:hover {
+    transform: scale(1.15); /* Enlarge the image on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Add a shadow for depth */
+}
+
+/* Adding a glow effect when hovered */
+.gallery-item img:hover, 
+.gallery-item video:hover {
+    filter: brightness(1.2) saturate(1.5); /* Brightens the image on hover */
+}
+
+/* ... (CSS för CV-sektionen och kontaktsektionen kommer senare) */
+/* Kontaktsektion */
+#kontakt {
+    text-align: center; /* Centrerar innehållet i sektionen */
+}
+
+#kontaktformulär {
+    display: inline-block; /* Gör formuläret till ett inline-block-element */
+    max-width: 500px; /* Begränsar formulärets bredd */
+    width: 90%; /* Gör formuläret responsivt */
+    padding: 20px;
+    border: 1px solid #ccc; /* Lägger till en tunn kant runt formuläret */
+    border-radius: 5px; /* Rundar hörnen */
+}
+
+#kontaktformulär div {
+    margin-bottom: 10px; /* Lägger till utrymme mellan inmatningsfälten */
+}
+
+#kontaktformulär label {
+    display: block; /* Gör etiketterna till block-element */
+    margin-bottom: 5px; /* Lägger till utrymme under etiketterna */
+}
+
+#kontaktformulär input[type="text"],
+#kontaktformulär input[type="email"],
+#kontaktformulär textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Inkluderar padding och border i elementets totala bredd och höjd */
+}
+
+#kontaktformulär textarea {
+    height: 100px; /* Ställer in höjden på textområdet */
+    resize: vertical; /* Tillåter endast vertikal storleksändring */
+}
+
+/* CV-sektion */
+.cv-container {
+    display: flex; /* Arrangerar sektionerna bredvid varandra */
+    flex-wrap: wrap; /* Tillåter sektionerna att brytas till nästa rad om det behövs */
+    justify-content: space-around; /* Skapar jämnt mellanrum mellan sektionerna */
+}
+
+.cv-section {
+    width: 30%; /* Justera bredden på varje sektion efter behov */
+    margin-bottom: 20px; /* Lägger till lite utrymme mellan sektionerna */
+}
+
+.cv-section h3 {
+    margin-bottom: 10px; /* Lägger till utrymme under rubriken */
+}
+
+.cv-section ul {
+    list-style: none; /* Tar bort punkterna från listan */
+    padding: 0; /* Tar bort eventuell standardpadding */
+}
+
+.cv-section li {
+    margin-bottom: 15px; /* Lägger till utrymme mellan varje listobjekt */
+}
+
+.cv-section h4 {
+    margin-top: 0; /* Tar bort eventuell standardmarginal ovanför h4 */
+    margin-bottom: 5px; /* Lägger till lite utrymme under h4 */
+}
+
+/* Cool Button Styles */
+button.cool-btn {
+    background-color: #3498db; /* A nice blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.cool-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+/* Styla alert-rutor */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+/* Sidfot */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
